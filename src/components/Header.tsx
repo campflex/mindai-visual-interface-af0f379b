@@ -1,5 +1,5 @@
 
-import { Brain, Menu } from "lucide-react";
+import { Brain, Menu, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -27,6 +27,11 @@ const Header = () => {
             </a>
           </nav>
           
+          <Button className="bg-accent hover:bg-accent/90 mr-2">
+            <Plus size={18} className="mr-1" />
+            Create New Agent
+          </Button>
+          
           <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
             Connect Wallet
           </Button>
@@ -52,6 +57,10 @@ const Header = () => {
             <a href="#" className="text-foreground/80 hover:text-accent transition-colors py-2">
               Documentation
             </a>
+            <Button className="bg-accent hover:bg-accent/90 mb-2">
+              <Plus size={18} className="mr-1" />
+              Create New Agent
+            </Button>
             <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
               Connect Wallet
             </Button>

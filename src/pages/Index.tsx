@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Brain, Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
 import Header from "@/components/Header";
@@ -8,6 +7,19 @@ import SortMenu from "@/components/SortMenu";
 import { Input } from "@/components/ui/input";
 
 const AGENTS_DATA: AgentData[] = [
+  {
+    id: "3",
+    name: "BDR AI",
+    description: "Business Development Representative AI that can qualify leads and set up meetings with prospects.",
+    status: "Emerging",
+    tvl: "$356,780",
+    marketCap: "$1.2M",
+    volume24h: "$82K",
+    change24h: 12.5,
+    tokenPrice: "$0.015",
+    holders: "1,230",
+    icon: <User size={20} />
+  },
   {
     id: "1",
     name: "ChefAI",
@@ -33,19 +45,6 @@ const AGENTS_DATA: AgentData[] = [
     tokenPrice: "$0.058",
     holders: "6,782",
     icon: <FileText size={20} />
-  },
-  {
-    id: "3",
-    name: "BDR AI",
-    description: "Business Development Representative AI that can qualify leads and set up meetings with prospects.",
-    status: "Emerging",
-    tvl: "$356,780",
-    marketCap: "$1.2M",
-    volume24h: "$82K",
-    change24h: 12.5,
-    tokenPrice: "$0.015",
-    holders: "1,230",
-    icon: <User size={20} />
   },
   {
     id: "4",
@@ -149,7 +148,6 @@ const Index = () => {
         const bValue = parseInt(b.tvl.replace(/[^0-9]/g, ''));
         return sortOrder === "desc" ? bValue - aValue : aValue - bValue;
       }
-      // For simplicity, other sorts will use alphabetical order
       return sortOrder === "desc" 
         ? b.name.localeCompare(a.name) 
         : a.name.localeCompare(b.name);
