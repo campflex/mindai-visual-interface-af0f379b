@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Brain, Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
 import Header from "@/components/Header";
@@ -6,7 +7,7 @@ import FilterTabs from "@/components/FilterTabs";
 import SortMenu from "@/components/SortMenu";
 import { Input } from "@/components/ui/input";
 
-const AGENTS_DATA: AgentData[] = [
+export const AGENTS_DATA: AgentData[] = [
   {
     id: "3",
     name: "BDR AI",
