@@ -1,5 +1,5 @@
 
-import { ArrowUpRight, Brain, Sparkles } from "lucide-react";
+import { ArrowUpRight, Brain, Sparkles, TrendingDown, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StatusBadge from "./StatusBadge";
 
@@ -9,6 +9,11 @@ export type AgentData = {
   description: string;
   status: "Emerging" | "Operational";
   tvl: string;
+  marketCap: string;
+  volume24h: string;
+  change24h: number;
+  tokenPrice: string;
+  holders: string;
   icon?: React.ReactNode;
 };
 
@@ -35,19 +40,43 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
           {agent.description}
         </p>
         
-        <div className="flex flex-col gap-2">
-          <div className="flex justify-between items-center">
-            <span className="text-sm text-muted-foreground">Total Value Locked</span>
-            <span className="font-medium">{agent.tvl}</span>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4">
+          <div>
+            <span className="text-xs text-muted-foreground">TVL</span>
+            <p className="font-medium">{agent.tvl}</p>
           </div>
-          <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-accent animate-pulse-light" 
-              style={{ 
-                width: `${Math.min(parseInt(agent.tvl.replace(/[^0-9]/g, '')) / 1000 * 100, 100)}%` 
-              }}
-            />
+          <div>
+            <span className="text-xs text-muted-foreground">Market Cap</span>
+            <p className="font-medium">{agent.marketCap}</p>
           </div>
+          <div>
+            <span className="text-xs text-muted-foreground">Token Price</span>
+            <p className="font-medium">{agent.tokenPrice}</p>
+          </div>
+          <div>
+            <span className="text-xs text-muted-foreground">24h Vol</span>
+            <p className="font-medium">{agent.volume24h}</p>
+          </div>
+          <div>
+            <span className="text-xs text-muted-foreground">Holders</span>
+            <p className="font-medium">{agent.holders}</p>
+          </div>
+          <div>
+            <span className="text-xs text-muted-foreground">24h Chg</span>
+            <div className={`flex items-center gap-1 ${agent.change24h >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+              {agent.change24h >= 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
+              <span className="font-medium">{agent.change24h >= 0 ? '+' : ''}{agent.change24h}%</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-accent animate-pulse-light" 
+            style={{ 
+              width: `${Math.min(parseInt(agent.tvl.replace(/[^0-9]/g, '')) / 1000 * 100, 100)}%` 
+            }}
+          />
         </div>
       </div>
       

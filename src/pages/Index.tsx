@@ -14,6 +14,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "A sophisticated AI chef assistant that can create recipes, meal plans, and cooking guidance.",
     status: "Operational",
     tvl: "$542,120",
+    marketCap: "$2.5M",
+    volume24h: "$134K",
+    change24h: 5.8,
+    tokenPrice: "$0.023",
+    holders: "2,456",
     icon: <Cog size={20} />
   },
   {
@@ -22,6 +27,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "Blockchain specialist AI that provides guidance on web3 technologies, smart contracts, and DeFi.",
     status: "Operational",
     tvl: "$1,287,045",
+    marketCap: "$5.8M",
+    volume24h: "$290K",
+    change24h: -2.3,
+    tokenPrice: "$0.058",
+    holders: "6,782",
     icon: <FileText size={20} />
   },
   {
@@ -30,6 +40,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "Business Development Representative AI that can qualify leads and set up meetings with prospects.",
     status: "Emerging",
     tvl: "$356,780",
+    marketCap: "$1.2M",
+    volume24h: "$82K",
+    change24h: 12.5,
+    tokenPrice: "$0.015",
+    holders: "1,230",
     icon: <User size={20} />
   },
   {
@@ -38,6 +53,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "Key Opinion Leader AI that can analyze social media trends and create content strategies.",
     status: "Emerging",
     tvl: "$189,650",
+    marketCap: "$780K",
+    volume24h: "$45K",
+    change24h: -1.7,
+    tokenPrice: "$0.008",
+    holders: "892",
     icon: <Brain size={20} />
   },
   {
@@ -46,6 +66,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "AI copywriter that generates compelling marketing copy, blog posts, and ad content.",
     status: "Operational",
     tvl: "$721,390",
+    marketCap: "$3.2M",
+    volume24h: "$189K",
+    change24h: 7.2,
+    tokenPrice: "$0.032",
+    holders: "3,541",
     icon: <Search size={20} />
   },
   {
@@ -54,6 +79,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "Creative AI assistant for generating design concepts, color schemes, and layout ideas.",
     status: "Operational",
     tvl: "$498,340",
+    marketCap: "$2.1M",
+    volume24h: "$123K",
+    change24h: 3.5,
+    tokenPrice: "$0.021",
+    holders: "2,780",
     icon: <Wrench size={20} />
   },
   {
@@ -62,6 +92,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "AI specialized in e-commerce strategies, product descriptions, and conversion optimization.",
     status: "Emerging",
     tvl: "$247,890",
+    marketCap: "$950K",
+    volume24h: "$67K",
+    change24h: -5.3,
+    tokenPrice: "$0.012",
+    holders: "1,456",
     icon: <ShoppingCart size={20} />
   },
   {
@@ -70,6 +105,11 @@ const AGENTS_DATA: AgentData[] = [
     description: "Programming assistant that helps with code generation, debugging, and technical documentation.",
     status: "Operational",
     tvl: "$875,420",
+    marketCap: "$4.1M",
+    volume24h: "$215K",
+    change24h: 9.8,
+    tokenPrice: "$0.045",
+    holders: "4,890",
     icon: <Brain size={20} />
   }
 ];
