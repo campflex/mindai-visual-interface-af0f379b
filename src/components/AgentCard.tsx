@@ -1,4 +1,3 @@
-
 import { ArrowUpRight, Brain, Sparkles, TrendingDown, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StatusBadge from "./StatusBadge";
@@ -33,7 +32,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
                 <StatusBadge status={agent.status} />
               </div>
             </div>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-accent">
+            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-accent" onClick={(e) => e.preventDefault()}>
               <ArrowUpRight size={18} />
             </Button>
           </div>
@@ -83,7 +82,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
         </div>
         
         <div className="border-t border-border/40 p-4 bg-secondary/50">
-          <Button className="w-full bg-accent hover:bg-accent/90">
+          <Button className="w-full bg-accent hover:bg-accent/90" onClick={(e) => e.preventDefault()}>
             <Sparkles size={16} className="mr-2" />
             Use Agent
           </Button>
