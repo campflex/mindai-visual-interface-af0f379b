@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
+import { Brain, Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
 import Header from "@/components/Header";
 import AgentCard, { AgentData } from "@/components/AgentCard";
 import FilterTabs from "@/components/FilterTabs";
