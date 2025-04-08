@@ -19,6 +19,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: 12.5,
     tokenPrice: "$0.015",
     holders: "1,230",
+    tokenSymbol: "BDRAI",
     icon: <User size={20} />
   },
   {
@@ -32,6 +33,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: 5.8,
     tokenPrice: "$0.023",
     holders: "2,456",
+    tokenSymbol: "CHEF",
     icon: <Cog size={20} />
   },
   {
@@ -45,6 +47,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: -2.3,
     tokenPrice: "$0.058",
     holders: "6,782",
+    tokenSymbol: "W3X",
     icon: <FileText size={20} />
   },
   {
@@ -58,6 +61,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: -1.7,
     tokenPrice: "$0.008",
     holders: "892",
+    tokenSymbol: "KOL",
     icon: <Brain size={20} />
   },
   {
@@ -71,6 +75,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: 7.2,
     tokenPrice: "$0.032",
     holders: "3,541",
+    tokenSymbol: "COPY",
     icon: <Search size={20} />
   },
   {
@@ -84,6 +89,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: 3.5,
     tokenPrice: "$0.021",
     holders: "2,780",
+    tokenSymbol: "DGN",
     icon: <Wrench size={20} />
   },
   {
@@ -97,6 +103,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: -5.3,
     tokenPrice: "$0.012",
     holders: "1,456",
+    tokenSymbol: "ECMR",
     icon: <ShoppingCart size={20} />
   },
   {
@@ -110,6 +117,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: 9.8,
     tokenPrice: "$0.045",
     holders: "4,890",
+    tokenSymbol: "CODE",
     icon: <Brain size={20} />
   }
 ];

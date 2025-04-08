@@ -15,10 +15,26 @@ export type AgentData = {
   change24h: number;
   tokenPrice: string;
   holders: string;
+  tokenSymbol?: string; // Added token symbol property
   icon?: React.ReactNode;
 };
 
+// Generate token symbol based on agent name if not provided
+const getTokenSymbol = (name: string): string => {
+  // Extract first letter of each word
+  const words = name.split(/\s+/);
+  if (words.length === 1) {
+    // For single word names, take first 3-4 letters
+    return name.substring(0, Math.min(4, name.length)).toUpperCase();
+  } else {
+    // For multi-word names, take first letter of each word
+    return words.map(word => word[0]).join('').toUpperCase();
+  }
+};
+
 const AgentCard = ({ agent }: { agent: AgentData }) => {
+  const tokenSymbol = agent.tokenSymbol || getTokenSymbol(agent.name);
+  
   return (
     <Link to={`/agent/${agent.id}`} className="block">
       <div className="glass-card gradient-border rounded-xl overflow-hidden hover-scale">
@@ -30,7 +46,12 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
               </div>
               <div>
                 <h3 className="font-medium text-lg gradient-text">{agent.name}</h3>
-                <StatusBadge status={agent.status} />
+                <div className="flex items-center gap-2">
+                  <StatusBadge status={agent.status} />
+                  <span className="px-2 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
+                    ${tokenSymbol}
+                  </span>
+                </div>
               </div>
             </div>
             <Button variant="ghost" size="icon" className="text-accent hover:text-accent/80" onClick={(e) => e.preventDefault()}>
@@ -83,7 +104,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
         </div>
         
         <div className="border-t border-border/40 p-4 bg-secondary/50">
-          <Button className="w-full bg-accent hover:bg-accent/90 glow" onClick={(e) => e.preventDefault()}>
+          <Button className="w-full bg-accent hover:bg-accent/90 glow text-black font-semibold" onClick={(e) => e.preventDefault()}>
             <Sparkles size={16} className="mr-2" />
             Use Agent
           </Button>
