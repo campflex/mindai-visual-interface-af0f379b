@@ -169,7 +169,7 @@ const Index = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Autonomous AI Agent Network</h1>
+          <h1 className="text-3xl font-bold mb-2">Decentralized Network for AI Agents</h1>
           <p className="text-muted-foreground">
             Discover and interact with specialized AI agents for various tasks
           </p>
