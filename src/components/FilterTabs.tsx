@@ -22,10 +22,10 @@ const FilterTabs = ({ tabs, activeTab, onTabChange, className }: FilterTabsProps
           key={tab.value}
           variant={activeTab === tab.value ? "default" : "ghost"}
           className={cn(
-            "flex-1 text-sm",
+            "flex-1 text-sm transition-all",
             activeTab === tab.value 
-              ? "bg-white text-foreground shadow-sm" 
-              : "text-muted-foreground hover:text-foreground"
+              ? "bg-accent text-black font-medium shadow-sm" 
+              : "text-muted-foreground hover:text-black hover:bg-accent/50"
           )}
           onClick={() => onTabChange(tab.value)}
         >
