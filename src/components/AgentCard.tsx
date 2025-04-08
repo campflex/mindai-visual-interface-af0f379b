@@ -1,3 +1,4 @@
+
 import { ArrowUpRight, Brain, Sparkles, TrendingDown, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StatusBadge from "./StatusBadge";
@@ -20,19 +21,19 @@ export type AgentData = {
 const AgentCard = ({ agent }: { agent: AgentData }) => {
   return (
     <Link to={`/agent/${agent.id}`} className="block">
-      <div className="glass-card rounded-xl overflow-hidden hover-scale">
+      <div className="glass-card gradient-border rounded-xl overflow-hidden hover-scale">
         <div className="p-6">
           <div className="flex justify-between items-start mb-4">
             <div className="flex gap-3 items-center">
-              <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+              <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center text-accent glow">
                 {agent.icon || <Brain size={20} />}
               </div>
               <div>
-                <h3 className="font-medium text-lg">{agent.name}</h3>
+                <h3 className="font-medium text-lg gradient-text">{agent.name}</h3>
                 <StatusBadge status={agent.status} />
               </div>
             </div>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-accent" onClick={(e) => e.preventDefault()}>
+            <Button variant="ghost" size="icon" className="text-accent hover:text-accent/80" onClick={(e) => e.preventDefault()}>
               <ArrowUpRight size={18} />
             </Button>
           </div>
@@ -64,7 +65,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
             </div>
             <div>
               <span className="text-xs text-muted-foreground">24h Chg</span>
-              <div className={`flex items-center gap-1 ${agent.change24h >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+              <div className={`flex items-center gap-1 ${agent.change24h >= 0 ? 'text-accent' : 'text-red-500'}`}>
                 {agent.change24h >= 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
                 <span className="font-medium">{agent.change24h >= 0 ? '+' : ''}{agent.change24h}%</span>
               </div>
@@ -73,7 +74,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
 
           <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
             <div 
-              className="h-full bg-accent animate-pulse-light" 
+              className="h-full bg-accent" 
               style={{ 
                 width: `${Math.min(parseInt(agent.tvl.replace(/[^0-9]/g, '')) / 1000 * 100, 100)}%` 
               }}
@@ -82,7 +83,7 @@ const AgentCard = ({ agent }: { agent: AgentData }) => {
         </div>
         
         <div className="border-t border-border/40 p-4 bg-secondary/50">
-          <Button className="w-full bg-accent hover:bg-accent/90" onClick={(e) => e.preventDefault()}>
+          <Button className="w-full bg-accent hover:bg-accent/90 glow" onClick={(e) => e.preventDefault()}>
             <Sparkles size={16} className="mr-2" />
             Use Agent
           </Button>
