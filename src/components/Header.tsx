@@ -1,7 +1,8 @@
 
-import { Brain, Menu, Plus } from "lucide-react";
+import { Menu, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,10 +10,7 @@ const Header = () => {
   return (
     <header className="border-b border-border/40 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Brain size={28} className="text-accent" />
-          <span className="font-bold text-xl tracking-tight">MindAI Protocol</span>
-        </div>
+        <Logo />
         
         <div className="hidden md:flex items-center gap-4">
           <nav className="flex gap-6 items-center">

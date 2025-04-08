@@ -1,11 +1,11 @@
-
 import { useState } from "react";
-import { Brain, Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
+import { Cog, FileText, Search, ShoppingCart, User, Wrench } from "lucide-react";
 import Header from "@/components/Header";
 import AgentCard, { AgentData } from "@/components/AgentCard";
 import FilterTabs from "@/components/FilterTabs";
 import SortMenu from "@/components/SortMenu";
 import { Input } from "@/components/ui/input";
+import Logo from "@/components/Logo";
 
 export const AGENTS_DATA: AgentData[] = [
   {
@@ -223,9 +223,8 @@ const Index = () => {
       
       <footer className="bg-background border-t border-border/40 py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Brain size={18} />
-            <span className="font-medium">MindAI Protocol</span>
+          <div className="flex items-center justify-center mb-2">
+            <Logo size={18} className="!text-sm !mr-0" />
           </div>
           <p>© 2023 MindAI Protocol. All rights reserved.</p>
         </div>
