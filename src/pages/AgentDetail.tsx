@@ -65,14 +65,7 @@ const AgentDetail = () => {
               </div>
             </div>
             
-            <div className="flex gap-2">
-              <Button className="bg-accent hover:bg-accent/90">
-                Use Agent
-              </Button>
-              <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
-                Connect Wallet
-              </Button>
-            </div>
+            <div className="flex gap-2" />
           </div>
         </div>
         
@@ -92,16 +85,14 @@ const AgentDetail = () => {
                 </div>
               </div>
               
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/86eecc40-b2fb-41e1-9e1d-24febab914d5.png" 
-                  alt="Trading Chart" 
-                  className="w-full h-auto rounded-md"
+              <div className="relative w-full aspect-video overflow-hidden rounded-xl">
+                <iframe
+                  id="dextools-widget"
+                  title="DEXTools Trading Chart"
+                  src="https://www.dextools.io/widget-chart/en/ether/pe-dark/0x69c7bd26512f52bf6f76fab834140d13dda673ca?theme=dark&chartType=1&chartResolution=30&drawingToolbars=false"
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                  allowFullScreen
                 />
-                <div className="absolute bottom-4 right-4 text-xs text-white/70 flex items-center gap-1">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Live Data
-                </div>
               </div>
               
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
@@ -170,7 +161,7 @@ const AgentDetail = () => {
               <div className="bg-secondary/40 rounded-lg p-4 mb-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-muted-foreground">You Pay</span>
-                  <span className="text-xs text-accent">Balance: 0 ETH</span>
+                  <span className="text-xs text-accent">Balance: 0 MINDAI</span>
                 </div>
                 <div className="flex items-center justify-between bg-background/60 rounded-md p-2">
                   <input 
@@ -179,7 +170,7 @@ const AgentDetail = () => {
                     placeholder="0.0" 
                   />
                   <Button variant="secondary" size="sm" className="ml-2">
-                    ETH
+                    MINDAI
                   </Button>
                 </div>
               </div>
@@ -203,10 +194,10 @@ const AgentDetail = () => {
               
               <div className="text-xs text-muted-foreground mb-4 flex justify-between">
                 <span>Exchange Rate</span>
-                <span>1 ETH = 12,450 {agent.name.split(' ')[0].substring(0, 5).toUpperCase()}</span>
+                <span>1 MINDAI = 12,450 {agent.name.split(' ')[0].substring(0, 5).toUpperCase()}</span>
               </div>
               
-              <Button className="w-full bg-accent hover:bg-accent/90 mb-2">
+              <Button className="w-full bg-accent hover:bg-accent/90 text-black mb-2">
                 Connect Wallet to Trade
               </Button>
             </div>

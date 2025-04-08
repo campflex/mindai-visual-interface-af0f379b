@@ -13,27 +13,31 @@ const Header = () => {
         <Logo />
         
         <div className="hidden md:flex items-center gap-4">
-          <nav className="flex gap-6 items-center">
-            <a href="#" className="text-foreground/80 hover:text-accent transition-colors">
-              All Agents
-            </a>
-            <a href="#" className="text-foreground/80 hover:text-accent transition-colors">
-              My Agents
-            </a>
-            <a href="#" className="text-foreground/80 hover:text-accent transition-colors">
-              Documentation
-            </a>
-          </nav>
-          
-          <Button className="bg-accent hover:bg-accent/90 mr-2">
-            <Plus size={18} className="mr-1" />
-            Create New Agent
-          </Button>
-          
-          <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
-            Connect Wallet
-          </Button>
-        </div>
+        <nav className="flex gap-6 items-center">
+          <a href="#" className="text-foreground/90 hover:text-accent transition-colors">
+            All Agents
+          </a>
+          <a href="#" className="text-foreground/90 hover:text-accent transition-colors">
+            My Agents
+          </a>
+          <a href="#" className="text-foreground/80 hover:text-accent transition-colors">
+            Documentation
+          </a>
+        </nav>
+
+        <Button className="flex items-center bg-accent hover:bg-accent/50 glow text-black font-semibold whitespace-nowrap">
+          <Plus size={18} className="mr-1" />
+          Create New Agent
+        </Button>
+
+        <Button
+          variant="outline"
+          className="flex items-center border-accent/50 text-accent hover:bg-accent/10 hover:text-accent whitespace-nowrap"
+        >
+          Connect Wallet
+        </Button>
+      </div>
+
         
         <Button 
           variant="ghost" 

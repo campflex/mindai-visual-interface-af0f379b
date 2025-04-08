@@ -48,7 +48,7 @@ export const AGENTS_DATA: AgentData[] = [
     change24h: -2.3,
     tokenPrice: "$0.058",
     holders: "6,782",
-    tokenSymbol: "W3X",
+    tokenSymbol: "WTXP",
     icon: <FileText size={20} />
   },
   {
@@ -227,7 +227,7 @@ const Index = () => {
           <div className="flex items-center justify-center mb-2">
             <Logo size={18} className="!text-sm !mr-0" />
           </div>
-          <p>© 2023 MindAI Protocol. All rights reserved.</p>
+          <p>© 2025 MindAI Protocol. All rights reserved.</p>
         </div>
       </footer>
     </div>
