@@ -3,9 +3,16 @@ import { Menu, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Logo from "./Logo";
+import { useWallet } from "@/hooks/useWallet";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { connectWallet, disconnectWallet, isConnected, address, isConnecting } = useWallet();
+
+  // Short address display
+  const shortAddress = address
+    ? address.slice(0, 5) + "..." + address.slice(-4)
+    : "";
 
   return (
     <header className="border-b border-border/40 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
@@ -32,13 +39,19 @@ const Header = () => {
 
         <Button
           variant="outline"
-          className="flex items-center border-accent/50 text-accent hover:bg-accent/10 hover:text-accent whitespace-nowrap"
+          className="flex items-center border-accent/50 text-accent hover:bg-accent/10 hover:text-accent whitespace-nowrap min-w-[120px]"
+          disabled={isConnecting}
+          onClick={isConnected ? disconnectWallet : connectWallet}
         >
-          Connect Wallet
+          {isConnected 
+            ? `Disconnect (${shortAddress})`
+            : isConnecting
+              ? "Connecting..."
+              : "Connect Wallet"
+          }
         </Button>
       </div>
 
-        
         <Button 
           variant="ghost" 
           size="icon" 
@@ -63,8 +76,18 @@ const Header = () => {
               <Plus size={18} className="mr-1" />
               Create New Agent
             </Button>
-            <Button variant="outline" className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent">
-              Connect Wallet
+            <Button
+              variant="outline"
+              className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent min-w-[120px]"
+              disabled={isConnecting}
+              onClick={isConnected ? disconnectWallet : connectWallet}
+            >
+              {isConnected 
+                ? `Disconnect (${shortAddress})`
+                : isConnecting
+                  ? "Connecting..."
+                  : "Connect Wallet"
+              }
             </Button>
           </div>
         )}
