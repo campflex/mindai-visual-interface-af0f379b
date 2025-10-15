@@ -1,6 +1,7 @@
 import { Menu, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { useWallet } from "@/hooks/useWallet";
 
@@ -20,12 +21,12 @@ const Header = () => {
         
         <div className="hidden md:flex items-center gap-4">
         <nav className="flex gap-6 items-center">
-          <a href="#" className="text-foreground/90 hover:text-accent transition-colors">
+          <Link to="/" className="text-foreground/90 hover:text-accent transition-colors">
             All Agents
-          </a>
-          <a href="#" className="text-foreground/90 hover:text-accent transition-colors">
+          </Link>
+          <Link to="/" className="text-foreground/90 hover:text-accent transition-colors">
             My Agents
-          </a>
+          </Link>
           <a href="#" className="text-foreground/80 hover:text-accent transition-colors">
             Documentation
           </a>
@@ -62,12 +63,12 @@ const Header = () => {
         
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-background border-b border-border/40 py-4 px-4 flex flex-col gap-4 md:hidden animate-fade-in">
-            <a href="#" className="text-foreground/80 hover:text-accent transition-colors py-2">
+            <Link to="/" className="text-foreground/80 hover:text-accent transition-colors py-2">
               All Agents
-            </a>
-            <a href="#" className="text-foreground/80 hover:text-accent transition-colors py-2">
+            </Link>
+            <Link to="/" className="text-foreground/80 hover:text-accent transition-colors py-2">
               My Agents
-            </a>
+            </Link>
             <a href="#" className="text-foreground/80 hover:text-accent transition-colors py-2">
               Documentation
             </a>
