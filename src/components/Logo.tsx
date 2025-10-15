@@ -14,7 +14,7 @@ const Logo: React.FC<LogoProps> = ({ size = 32, className = "" }) => {
         alt="MindAI Logo"
         className={`h-${size < 16 ? 8 : size < 24 ? 10 : 12} w-auto mr-2`}
       />
-      <span className="font-bold text-xl tracking-tight">MindAI Protocol</span>
+      <span className="font-bold text-xl tracking-tight">MindAI Protocol <span className="text-accent">Prototype</span></span>
     </div>
   );
 };

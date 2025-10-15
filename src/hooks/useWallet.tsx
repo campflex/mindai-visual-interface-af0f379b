@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 const projectId = "1b515928173a0e5eeba0234cd4556063";
 
 const metadata = {
-  name: "MindAI Protocol",
+  name: "MindAI Protocol Prototype",
   description: "Decentralized Network for AI Agents",
   url: "https://mindai.app",
   icons: ["https://mindai.app/icon.png"]
