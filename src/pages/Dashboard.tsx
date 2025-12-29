@@ -17,7 +17,6 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     usageFee: "0.005 EP",
     volume24h: "$312K",
     change24h: 8.5,
-    tokenPrice: "$0.045",
     users: "12,450",
     exchanges: ["binance", "huobi", "okx", "kucoin"],
     icon: <TrendingUp size={20} />
@@ -27,13 +26,15 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     name: "Crypto Consultant AI Agent",
     description: "Expert AI consultant providing insights on crypto investments, market trends, and portfolio strategies.",
     isBeta: false,
-    transactionVolume: "$890,000",
     usageFee: "0.002 EP",
     volume24h: "$95K",
     change24h: 3.2,
-    tokenPrice: "$0.032",
     users: "8,920",
-    icon: <Brain size={20} />
+    icon: <Brain size={20} />,
+    customMetric: {
+      label: "Advice Given",
+      value: "12,000"
+    }
   },
   {
     id: "d3",
@@ -44,7 +45,6 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     usageFee: "0.008 EP",
     volume24h: "$189K",
     change24h: -1.8,
-    tokenPrice: "$0.028",
     users: "6,340",
     exchanges: ["binance", "okx"],
     icon: <Briefcase size={20} />
@@ -58,7 +58,6 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     usageFee: "0.015 EP",
     volume24h: "$456K",
     change24h: 12.3,
-    tokenPrice: "$0.067",
     users: "4,890",
     exchanges: ["binance", "huobi", "kucoin"],
     icon: <Repeat size={20} />
@@ -72,7 +71,6 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     usageFee: "0.01 EP",
     volume24h: "$178K",
     change24h: 5.7,
-    tokenPrice: "$0.041",
     users: "7,560",
     exchanges: ["uniswap", "pancakeswap", "quickswap"],
     icon: <Coins size={20} />
@@ -82,26 +80,30 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     name: "KOL Genuinity Validator Agent",
     description: "Validates the authenticity and track record of crypto Key Opinion Leaders to protect against scams.",
     isBeta: true,
-    transactionVolume: "$320,000",
     usageFee: "0.001 EP",
     volume24h: "$28K",
     change24h: -4.2,
-    tokenPrice: "$0.012",
     users: "15,230",
-    icon: <Shield size={20} />
+    icon: <Shield size={20} />,
+    customMetric: {
+      label: "KOL Validated",
+      value: "1,200"
+    }
   },
   {
     id: "d7",
     name: "Crypto Marketing Agent",
     description: "AI-powered marketing assistant for crypto projects, handling social media, community, and campaigns.",
     isBeta: false,
-    transactionVolume: "$560,000",
     usageFee: "0.003 EP",
     volume24h: "$67K",
     change24h: 2.1,
-    tokenPrice: "$0.019",
     users: "3,450",
-    icon: <Megaphone size={20} />
+    icon: <Megaphone size={20} />,
+    customMetric: {
+      label: "Posts",
+      value: "4,500"
+    }
   },
   {
     id: "d8",
@@ -112,7 +114,6 @@ const DASHBOARD_AGENTS_DATA: DashboardAgentData[] = [
     usageFee: "0.02 EP",
     volume24h: "$398K",
     change24h: 6.8,
-    tokenPrice: "$0.054",
     users: "5,120",
     exchanges: ["binance", "okx"],
     icon: <DollarSign size={20} />
