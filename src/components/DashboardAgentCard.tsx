@@ -9,21 +9,33 @@ export type DashboardAgentData = {
   name: string;
   description: string;
   isBeta: boolean;
-  transactionVolume: string;
+  transactionVolume?: string;
   usageFee: string;
   volume24h: string;
   change24h: number;
-  tokenPrice: string;
   users: string;
   exchanges?: ("binance" | "huobi" | "okx" | "kucoin" | "uniswap" | "pancakeswap" | "quickswap")[];
   icon?: React.ReactNode;
+  customMetric?: {
+    label: string;
+    value: string;
+  };
 };
 
 const DashboardAgentCard = ({ agent }: { agent: DashboardAgentData }) => {
+  const primaryMetricLabel = agent.customMetric?.label || "Transaction Volume";
+  const primaryMetricValue = agent.customMetric?.value || agent.transactionVolume || "-";
+  
+  const progressValue = agent.transactionVolume 
+    ? Math.min(parseInt(agent.transactionVolume.replace(/[^0-9]/g, '')) / 10000 * 100, 100)
+    : agent.customMetric 
+      ? Math.min(parseInt(agent.customMetric.value.replace(/[^0-9]/g, '')) / 200 * 100, 100)
+      : 50;
+
   return (
-    <Link to={`/agent/${agent.id}`} className="block">
-      <div className="glass-card gradient-border rounded-xl overflow-hidden hover-scale">
-        <div className="p-6">
+    <Link to={`/agent/${agent.id}`} className="block h-full">
+      <div className="glass-card gradient-border rounded-xl overflow-hidden hover-scale h-full flex flex-col">
+        <div className="p-6 flex-1 flex flex-col">
           <div className="flex justify-between items-start mb-4">
             <div className="flex gap-3 items-center">
               <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center text-accent glow">
@@ -48,18 +60,14 @@ const DashboardAgentCard = ({ agent }: { agent: DashboardAgentData }) => {
             {agent.description}
           </p>
           
-          <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4 flex-1">
             <div>
-              <span className="text-xs text-muted-foreground">Transaction Volume</span>
-              <p className="font-medium">{agent.transactionVolume}</p>
+              <span className="text-xs text-muted-foreground">{primaryMetricLabel}</span>
+              <p className="font-medium">{primaryMetricValue}</p>
             </div>
             <div>
               <span className="text-xs text-muted-foreground">Usage Fee</span>
               <p className="font-medium">{agent.usageFee}</p>
-            </div>
-            <div>
-              <span className="text-xs text-muted-foreground">Token Price</span>
-              <p className="font-medium">{agent.tokenPrice}</p>
             </div>
             <div>
               <span className="text-xs text-muted-foreground">24h Vol</span>
@@ -69,7 +77,7 @@ const DashboardAgentCard = ({ agent }: { agent: DashboardAgentData }) => {
               <span className="text-xs text-muted-foreground">Users</span>
               <p className="font-medium">{agent.users}</p>
             </div>
-            <div>
+            <div className="col-span-2">
               <span className="text-xs text-muted-foreground">24h Chg</span>
               <div className={`flex items-center gap-1 ${agent.change24h >= 0 ? 'text-accent' : 'text-red-500'}`}>
                 {agent.change24h >= 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
@@ -78,17 +86,15 @@ const DashboardAgentCard = ({ agent }: { agent: DashboardAgentData }) => {
             </div>
           </div>
 
-          <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
+          <div className="h-1 w-full bg-secondary rounded-full overflow-hidden mt-auto">
             <div 
               className="h-full bg-accent" 
-              style={{ 
-                width: `${Math.min(parseInt(agent.transactionVolume.replace(/[^0-9]/g, '')) / 10000 * 100, 100)}%` 
-              }}
+              style={{ width: `${progressValue}%` }}
             />
           </div>
         </div>
         
-        <div className="border-t border-border/40 p-4 bg-secondary/50">
+        <div className="border-t border-border/40 p-4 bg-secondary/50 mt-auto">
           <Button className="w-full bg-accent hover:bg-accent/90 glow text-black font-semibold" onClick={(e) => e.preventDefault()}>
             <Sparkles size={16} className="mr-2" />
             Use Agent
